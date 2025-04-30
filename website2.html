@@ -29,19 +29,20 @@
           flex-wrap: wrap;
           border-bottom: 4px solid #87ceeb;
           position: relative;
+          gap: 20px;
         }
     
         .logo-container {
           display: flex;
           align-items: center;
           justify-content: center;
-          position: absolute;
-          left: 60%;
+          left: 50%;
           transform: translateX(-50%);
+          gap: 10px;
         }
     
         .logo-container img {
-          width: 100%;
+          width:50%;
           height: 50px;
           margin-right: 12px;
           border-radius: 100px;
@@ -56,12 +57,13 @@
           display: flex;
           width: 100%;
           justify-content: space-between;
+          flex-wrap: wrap;
           align-items: center;
         }
     
         .nav-left, .nav-right {
           display: flex;
-          align-items: center;
+          align-items:center;
           gap: 20px;
         }
     
@@ -113,7 +115,35 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
+    .home {
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
+    .home-box {
+      background-color: #fff5e1;
+      border: 2px solid #ffa07a;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .home-box h2 {
+      color: #b22222;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .home-box p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    
 </style> 
 <body>
     <header>
@@ -144,6 +174,12 @@
             <button>Sign Up</button>
           </div>
         </nav>
-      </header>     
+      </header>   
+      <section id="home" class="home">
+        <div class="home-box">
+          <h2>Welcome to HAM</h2>
+          <p>Discover authentic handmade and manmade creations—crafted with pride in Nepal. Celebrate culture, innovation, and craftsmanship in every product.</p>
+        </div>
+      </section>  
 </body>
 </html>
