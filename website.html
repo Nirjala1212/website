@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HAM - Handmade & Manmade in Nepal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: powderblue;
+      color: #333;
+    }
+
+    header {
+      background-color: #4682b4;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 4px solid #87ceeb;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      left: 60%;
+      transform: translateX(-50%);
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: 50px;
+      margin-right: 12px;
+      border-radius: 100px;
+    }
+
+    .logo-container h1 {
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-left a, .nav-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-buttons button {
+      background-color: transparent;
+      border: 2px solid #fff;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .auth-buttons button:hover {
+      background-color: white;
+      color: #4682b4;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f0f8ff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 14px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e0ffff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    
+    .home {
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home-box {
+      background-color: #fff5e1;
+      border: 2px solid #ffa07a;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+    .home-box h2 {
+      color: #b22222;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .home-box p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin: 30px 0 10px;
+      color: #4b0082;
+    }
+
+    .product-category {
+      padding: 20px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product {
+      background-color: #f5f5dc;
+      border: 2px solid #d2b48c;
+      border-radius: 16px;
+      padding: 16px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width:100%;
+      height: 200px;
+      object-fit:cover;
+      border-radius: 10px;
+      transition: transform 0.3s esae,box-shadow 0.3s ease;
+    }
+    .product img:hover{
+      transform:scale(1.05) translate(-5px);
+      box-shadow: 0 8px 16px #555;
+    }
+
+    .product h4 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .product p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .product button {
+      margin-top: 8px;
+      background-color: #2e8b57;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product button:hover {
+      background-color: #3cb371;
+    }
+    .why-choose-us {
+     margin-top: 30px;
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+     max-width: 700px;
+     background-color: #b3bec8;
+     border-radius: 20px;
+     box-shadow:0 8px 16px #e0ffff;
+     border: 2px solid #333;
+     padding: 30px 20px;
+
+}
+
+.why-choose-us h2 {
+  color: #4b0082;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.why-choose-us ul {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  color: #333;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.why-choose-us ul li {
+  margin-bottom: 12px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.why-choose-us ul li::before {
+  content:var(#333)
+  position: absolute;
+  left: 0;
+  color: #5d4209;
+  font-size: 20px;
+}
+
+    
+    .contact {
+      background-color: #4682b4;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    footer {
+      background-color: #1c3f5f;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="nav-left">
+       
+        <a href="#home">Home</a>
+        <div class="dropdown">
+         
+          <a href="#products">Products</a>
+          <div class="dropdown-content">
+            <a href="#handmade">Handmade</a>
+            <a href="#manmade">Manmade</a>
+           
+          </div>
+        </div>
+        <a href="#contact">Contact</a>
+       <a href="#About Us">About Us</a>
+      </div>
+
+      <div class="logo-container">
+        <img src="image/logo.png" alt="HAM Logo">
+        <h1>HAM</h1>
+      </div>
+
+      <div class="nav-right auth-buttons">
+        <button>Sign In</button>
+        <button>Sign Up</button>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <div class="home-box">
+      <h2>Welcome to HAM</h2>
+      <p>Discover authentic handmade and manmade creations—crafted with pride in Nepal. Celebrate culture, innovation, and craftsmanship in every product.</p>
+    </div>
+  </section>
+
+  <section id="handmade">
+    <h2 class="section-title">Handmade Items</h2>
+    <div class="product-container">
+      <div class="product">
+        <img src="image/image.jpeg" alt="Product 1">
+        <h4>Woolen Scarf<br>Rs.1000</h4>
+        <p>Crochet with love</p>
+        <button>Buy</button>
+      </div>
+      <div class="product">
+        <img src="image/image1.jpeg" alt="Product 2">
+        <h4>Clay Pot<br>Rs.600</h4>
+        <p>Crafted from natural clay</p>
+        <button>Buy</button>
+      </div>
+      <div class="product">
+        <img src="image/image2.jpeg" alt="Product 3">
+        <h4>Bamboo Basket<br>Rs.500</h4>
+        <p>Eco-friendly storage</p>
+        <button>Buy</button>
+      </div>
+      <div class="product">
+        <img src="image/image6.jpeg" alt="Product 4">
+        <h4>Mirror Art<br>Rs.1200</h4>
+        <p>Decorative wall piece</p>
+        <button>Buy</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="manmade">
+    <h2 class="section-title">Manmade Items</h2>
+    <div class="product-container">
+      <div class="product">
+        <img src="image/image4.jpeg" alt="Product 5">
+        <h4>Wooden Clock<br>Rs.2000</h4>
+        <p>Precision built style</p>
+        <button>Buy</button>
+      </div>
+      <div class="product">
+        <img src="image/image5.jpeg" alt="Product 6">
+        <h4>Leather Wallet<br>Rs.1500</h4>
+        <p>Elegant & sophisticated</p>
+        <button>Buy</button>
+      </div>
+      <div class="product">
+        <img src="image/image7.jpeg" alt="Product 7">
+        <h4>Wooden Lamp<br>Rs.2500</h4>
+        <p>Modern Nepali design</p>
+        <button>Buy</button>
+      </div>
+      <div class="product">
+        <img src="image/image8.jpeg" alt="Product 8">
+        <h4>Leather shoes<br>Rs.3000</h4>
+        <p>Durable & innovative</p>
+        <button>Buy</button>
+      </div>
+    </div>
+  </section>
+  <section id="About Us">
+    <div class="why-choose-us">
+      <h2>Why Choose Us?</h2>
+      <ul>
+        <li>Authentic Handmade Creations</li>
+        <li>Supporting Local Artisans</li>
+        <li>Global Shipping Available</li>
+        <li>Sustainable and Ethical Practices</li>
+      </ul>
+    </div>
+    
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: hamnepal@example.com</p>
+    <p>Phone: +977-9823654322</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 HAM - Handmade & Manmade in Nepal. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
