@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+        * {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+    
+        body {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: powderblue;
+          color: #333;
+        }
+    
+        header {
+          background-color: #4682b4;
+          color: white;
+          padding: 20px 40px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          border-bottom: 4px solid #87ceeb;
+          position: relative;
+        }
+    
+        .logo-container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          left: 60%;
+          transform: translateX(-50%);
+        }
+    
+        .logo-container img {
+          width: 100%;
+          height: 50px;
+          margin-right: 12px;
+          border-radius: 100px;
+        }
+    
+        .logo-container h1 {
+          font-size: 30px;
+          letter-spacing: 1px;
+        }
+    
+        nav {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+        }
+    
+        .nav-left, .nav-right {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+    
+        .nav-left a, .nav-right a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        .auth-buttons button {
+      background-color: transparent;
+      border: 2px solid #fff;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .auth-buttons button:hover {
+      background-color: white;
+      color: #4682b4;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f0f8ff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 160px;
+      z-index: 1;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 14px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e0ffff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+</style> 
+<body>
+    <header>
+        <nav>
+          <div class="nav-left">
+           
+            <a href="#home">Home</a>
+            <div class="dropdown">
+             
+              <a href="#products">Products</a>
+              <div class="dropdown-content">
+                <a href="#handmade">Handmade</a>
+                <a href="#manmade">Manmade</a>
+               
+              </div>
+            </div>
+            <a href="#contact">Contact</a>
+           <a href="#About Us">About Us</a>
+          </div>
+    
+          <div class="logo-container">
+            <img src="image/logo.png" alt="HAM Logo">
+            <h1>HAM</h1>
+          </div>
+    
+          <div class="nav-right auth-buttons">
+            <button>Sign In</button>
+            <button>Sign Up</button>
+          </div>
+        </nav>
+      </header>     
+</body>
+</html>
