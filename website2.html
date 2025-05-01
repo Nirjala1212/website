@@ -142,7 +142,70 @@
       font-size: 18px;
       line-height: 1.6;
     }
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin: 30px 0 10px;
+      color: #4b0082;
+    }
 
+    .product-category {
+      padding: 20px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .product {
+      background-color: #f5f5dc;
+      border: 2px solid #d2b48c;
+      border-radius: 16px;
+      padding: 16px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width:100%;
+      height: 200px;
+      object-fit:cover;
+      border-radius: 10px;
+      transition: transform 0.3s esae,box-shadow 0.3s ease;
+    }
+    .product img:hover{
+      transform:scale(1.05) translate(-5px);
+      box-shadow: 0 8px 16px #555;
+    }
+
+    .product h4 {
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    .product p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .product button {
+      margin-top: 8px;
+      background-color: #2e8b57;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .product button:hover {
+      background-color: #3cb371;
+    }
+    
     
 </style> 
 <body>
@@ -180,6 +243,65 @@
           <h2>Welcome to HAM</h2>
           <p>Discover authentic handmade and manmade creations—crafted with pride in Nepal. Celebrate culture, innovation, and craftsmanship in every product.</p>
         </div>
-      </section>  
+      </section> 
+      <section id="handmade">
+        <h2 class="section-title">Handmade Items</h2>
+        <div class="product-container">
+          <div class="product">
+            <img src="image/image.jpeg" alt="Product 1">
+            <h4>Woolen Scarf<br>Rs.1000</h4>
+            <p>Crochet with love</p>
+            <button>Buy</button>
+          </div>
+          <div class="product">
+            <img src="image/image1.jpeg" alt="Product 2">
+            <h4>Clay Pot<br>Rs.600</h4>
+            <p>Crafted from natural clay</p>
+            <button>Buy</button>
+          </div>
+          <div class="product">
+            <img src="image/image2.jpeg" alt="Product 3">
+            <h4>Bamboo Basket<br>Rs.500</h4>
+            <p>Eco-friendly storage</p>
+            <button>Buy</button>
+          </div>
+          <div class="product">
+            <img src="image/image6.jpeg" alt="Product 4">
+            <h4>Mirror Art<br>Rs.1200</h4>
+            <p>Decorative wall piece</p>
+            <button>Buy</button>
+          </div>
+        </div>
+      </section>
+    
+      <section id="manmade">
+        <h2 class="section-title">Manmade Items</h2>
+        <div class="product-container">
+          <div class="product">
+            <img src="image/image4.jpeg" alt="Product 5">
+            <h4>Wooden Clock<br>Rs.2000</h4>
+            <p>Precision built style</p>
+            <button>Buy</button>
+          </div>
+          <div class="product">
+            <img src="image/image5.jpeg" alt="Product 6">
+            <h4>Leather Wallet<br>Rs.1500</h4>
+            <p>Elegant & sophisticated</p>
+            <button>Buy</button>
+          </div>
+          <div class="product">
+            <img src="image/image7.jpeg" alt="Product 7">
+            <h4>Wooden Lamp<br>Rs.2500</h4>
+            <p>Modern Nepali design</p>
+            <button>Buy</button>
+          </div>
+          <div class="product">
+            <img src="image/image8.jpeg" alt="Product 8">
+            <h4>Leather shoes<br>Rs.3000</h4>
+            <p>Durable & innovative</p>
+            <button>Buy</button>
+          </div>
+        </div>
+      </section> 
 </body>
 </html>
